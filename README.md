@@ -1,59 +1,163 @@
-# Readify
+# Readify - Digital Library
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.1.
+Book management application developed with Angular that implements basic routing configuration and static routes.
 
-## Development server
+## 📚 Project Description
 
-To start a local development server, run:
+Readify is a book management web application built with Angular that includes the following features:
+
+- **Home Page**: Welcome page to the digital library
+- **Book List**: View displaying the catalog of available books
+- **Book Details**: Page with detailed information for each book
+- **404 Error Handling**: Page for routes not found
+
+## 🎯 Learning Objectives
+
+This project is designed to learn and practice:
+
+- Angular Router configuration
+- Creating and associating components to routes
+- Implementing basic navigation with `routerLink`
+- Configuring static and dynamic routes
+- Managing wildcard routes for 404 errors
+- Styling with Tailwind CSS
+
+## 🏗️ Route Structure
+
+The application implements the following route configuration:
+
+| Route | Component | Description |
+|------|-----------|------------|
+| `/` | Home | Home page |
+| `/books` | BookList | List of books |
+| `/books/:bookId` | BookDetails | Details of a specific book (dynamic route) |
+| `**` | NotFound | 404 error page |
+
+## 🚀 Installation and Setup
+
+### Prerequisites
+
+- Node.js (version 18 or higher)
+- pnpm (package manager)
+- Angular CLI
+
+### Installation Steps
+
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd readify
+```
+
+2. Install dependencies:
+```bash
+pnpm install
+```
+
+3. Start the development server:
+```bash
+ng serve
+```
+
+4. Open your browser at `http://localhost:4200/`
+
+## 💻 Development
+
+### Development Server
+
+To start the local development server:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+The application will automatically reload when source files are modified.
 
-## Code scaffolding
+### Generate New Components
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+To generate a new component:
 
 ```bash
 ng generate component component-name
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 🎨 Styling
 
-```bash
-ng generate --help
+The project uses **Tailwind CSS** for styling. The configuration includes:
+
+- Responsive navigation bar
+- Styles for active routes (bold/underline)
+- Consistent design system
+
+## 📁 Project Structure
+
+```
+src/
+├── app/
+│   ├── app.config.ts          # Application configuration
+│   ├── app.routes.ts          # Route definitions
+│   ├── app.html               # Main template with navigation
+│   ├── app.ts                 # Main component
+│   └── components/
+│       ├── home/              # Home page component
+│       ├── book-list/         # Book list component
+│       ├── book-details/      # Book details component
+│       └── not-found/         # 404 error component
+├── index.html
+├── main.ts
+└── styles.css
 ```
 
-## Building
+## 🔧 Technical Features
 
-To build the project run:
+- **Angular Standalone Components**: Standalone components without the need for NgModules
+- **Router**: Route configuration with `provideRouter`
+- **RouterLink**: Declarative navigation in templates
+- **RouterLinkActive**: Style management for active routes
+- **Dynamic Routes**: Route parameters with `:bookId`
+- **Tailwind CSS**: CSS utility framework
 
-```bash
-ng build
-```
+## 🧪 Testing
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+To run unit tests:
 
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
+## 🏗️ Build
 
-For end-to-end (e2e) testing, run:
+To build the project for production:
 
 ```bash
-ng e2e
+ng build
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Build artifacts will be stored in the `dist/` directory.
 
-## Additional Resources
+## 📝 Development Notes
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### RouterLink and RouterLinkActive
+
+The application uses:
+- `routerLink`: To define navigation links
+- `routerLinkActive`: To apply CSS classes to active routes
+- `routerLinkActiveOptions`: To configure matching behavior (exact match)
+
+### PathMatch
+
+The route configuration uses `pathMatch: 'full'` for root route redirection, ensuring it only matches the exact URL.
+
+## 📚 Resources
+
+- [Official Angular Documentation](https://angular.io/)
+- [Angular Router](https://angular.io/guide/router)
+- [Tailwind CSS](https://tailwindcss.com/)
+
+## 👨‍💻 Author
+
+Project developed by Miguel Pujazón Cárdenas for IT Academy - Sprint 5
+
+## 📄 License
+
+This project is open source and available under the MIT License

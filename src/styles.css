@@ -1,3 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
-
 @import "tailwindcss";
+
+@theme {
+  --color-primary: #cfb07a;
+  --color-primary-content: #1a202c;
+  --color-primary-dark: #b09259;
+  --color-background-light: #f6f6f8;
+  --color-background-dark: #0f131a;
+  --color-surface-dark: #181d26;
+  --color-surface-border: #252b36;
+  --color-text-main: #e2e8f0;
+  --color-text-muted: #94a3b8;
+  --color-accent-blue: #334155;
+
+  --font-display: "Manrope", sans-serif;
+  --font-serif: "Playfair Display", serif;
+
+  --radius-DEFAULT: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-full: 9999px;
+}
+
+@variant dark (&:where(.dark, .dark *));

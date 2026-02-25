@@ -1,0 +1,43 @@
+/* Footer smooth animations and transitions */
+footer a {
+  position: relative;
+}
+
+footer a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-primary);
+  transition: width 0.3s ease;
+}
+
+footer a:hover::after {
+  width: 100%;
+}
+
+/* Input focus effects */
+input::placeholder {
+  color: var(--color-text-muted);
+  opacity: 0.5;
+}
+
+input:focus {
+  box-shadow: 0 0 0 3px rgba(207, 176, 122, 0.1);
+}
+
+/* Social icons smooth transitions */
+footer .rounded-full {
+  transition: all 0.3s ease;
+}
+
+footer .rounded-full:hover {
+  transform: translateY(-2px);
+}
+
+/* Newsletter button animation */
+button:active {
+  transform: scale(0.98);
+}

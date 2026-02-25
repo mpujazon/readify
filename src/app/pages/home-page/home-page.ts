@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import {Button} from '../../components/atoms/button/button';
-import {BookCard} from '../../components/atoms/book-card/book-card';
+import {FeaturedCollection} from '../../components/featured-collection/featured-collection';
 
 @Component({
   selector: 'app-home-page',
   imports: [
     Button,
-    BookCard
+    FeaturedCollection
   ],
   templateUrl: './home-page.html',
 })

@@ -1,0 +1,15 @@
+<section class="flex flex-col gap-8 mb-16">
+  <div class="flex items-center justify-between px-2 border-l-4 border-primary pl-4">
+    <h2 class="text-text-main text-2xl font-serif font-bold leading-tight tracking-tight flex items-center gap-2">
+      Featured Collection
+    </h2>
+    <a class="text-primary text-sm font-semibold hover:text-primary-dark transition-colors flex items-center gap-1 uppercase tracking-wider" href="#">
+      View all <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+    </a>
+  </div>
+  <div class="flex overflow-x-auto pb-8 pt-2 gap-6 [-ms-scrollbar-style:none] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden snap-x snap-mandatory px-2">
+    @for (book of books; track book.id) {
+      <app-book-card [book]="book" />
+    }
+  </div>
+</section>

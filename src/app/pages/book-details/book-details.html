@@ -1,0 +1,253 @@
+<main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12 max-w-7xl">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <div class="lg:col-span-4 xl:col-span-3 flex flex-col gap-6">
+            <div
+                class="relative group aspect-[2/3] w-full rounded-lg shadow-2xl shadow-black/50 overflow-hidden bg-surface-darker ring-1 ring-white/5">
+                <div class="w-full h-full bg-center bg-no-repeat bg-cover transform transition-transform duration-700 ease-out group-hover:scale-105"
+                    data-alt="The Midnight Library book cover art" 
+                    [style.background-image]="`url(${bookResource.value()?.coverUrl})`"> <!-- TODO: FIX data-alt attribute -->
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60">
+                </div>
+            </div>
+            <div class="flex flex-col gap-3">
+                <button
+                    class="w-full py-3.5 px-6 bg-primary hover:bg-primary-dark text-white font-semibold rounded-lg shadow-lg shadow-primary/20 transition-all duration-200 flex items-center justify-center gap-2 group">
+                    <span class="material-symbols-outlined group-hover:scale-110 transition-transform">book_2</span>
+                    Read Now
+                </button>
+                <button
+                    class="w-full py-3.5 px-6 bg-surface-dark hover:bg-white/10 text-slate-200 font-medium rounded-lg border border-white/5 transition-all flex items-center justify-center gap-2 group">
+                    <span
+                        class="material-symbols-outlined group-hover:scale-110 transition-transform">bookmark_add</span>
+                    Add to Library
+                </button>
+            </div>
+        </div>
+        <div class="lg:col-span-8 xl:col-span-9 flex flex-col gap-10">
+            <div class="border-b border-white/5 pb-8">
+                <div class="flex flex-wrap justify-between items-start gap-4 mb-3">
+                    <h1
+                        class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white leading-tight tracking-tight">
+                        {{bookResource.value()?.title}}
+                    </h1>
+                    <div
+                        class="flex items-center gap-1.5 bg-primary/10 px-3 py-1.5 rounded-full border border-primary/20">
+                        <span class="material-symbols-outlined text-primary text-sm fill-1">star</span>
+                        <span class="text-primary font-bold text-sm">4.8</span>
+                        <span class="text-slate-400 text-xs ml-1 font-medium tracking-wide uppercase">12.5k
+                            reviews</span>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2 mb-8 text-xl">
+                    <span class="text-slate-500 font-serif italic">by</span>
+                    <a class="text-slate-200 hover:text-primary font-medium transition-colors" href="#">{{bookResource.value()?.author}}</a>
+                </div>
+                <div class="flex flex-wrap gap-3 text-sm text-slate-400">
+                    <div class="flex items-center gap-2 px-4 py-2 rounded-full bg-surface-dark border border-white/5">
+                        <span class="material-symbols-outlined text-[18px] text-slate-500">calendar_month</span>
+                        <span>Aug 2020</span>
+                    </div>
+                    <div class="flex items-center gap-2 px-4 py-2 rounded-full bg-surface-dark border border-white/5">
+                        <span class="material-symbols-outlined text-[18px] text-slate-500">menu_book</span>
+                        <span>304 Pages</span>
+                    </div>
+                    <div class="flex items-center gap-2 px-4 py-2 rounded-full bg-surface-dark border border-white/5">
+                        <span class="material-symbols-outlined text-[18px] text-slate-500">language</span>
+                        <span>English</span>
+                    </div>
+                    <div class="flex items-center gap-2 px-4 py-2 rounded-full bg-surface-dark border border-white/5">
+                        <span class="material-symbols-outlined text-[18px] text-slate-500">category</span>
+                        <span>Fiction</span>
+                    </div>
+                </div>
+            </div>
+            <div class="space-y-5">
+                <h3 class="text-xl font-serif font-semibold text-white flex items-center gap-3">
+                    Synopsis
+                    <span class="h-px flex-1 bg-white/5"></span>
+                </h3>
+                <div class="text-lg leading-relaxed text-slate-300 max-w-4xl space-y-6 font-light">
+                    <p>
+                        Between life and death there is a library, and within that library, the shelves go on forever.
+                        Every book provides a chance to try another life you could have lived. To see how things would
+                        be if you had made other choices... Would you have done anything different, if you had the
+                        chance to undo your regrets?
+                    </p>
+                    <p>
+                        A dazzling novel about all the choices that go into a life well lived, from the internationally
+                        bestselling author of <em class="text-slate-400 not-italic">Reasons to Stay Alive</em> and <em
+                            class="text-slate-400 not-italic">How To Stop Time</em>.
+                    </p>
+                </div>
+                <button
+                    class="text-primary font-medium hover:text-primary-light flex items-center gap-1 mt-2 group text-sm uppercase tracking-wide">
+                    Read full synopsis
+                    <span
+                        class="material-symbols-outlined text-lg transition-transform group-hover:translate-y-0.5">expand_more</span>
+                </button>
+            </div>
+            <div class="space-y-8 pt-6">
+                <div class="flex items-center justify-between">
+                    <h3 class="text-2xl font-serif font-bold text-white">Reader Reviews</h3>
+                    <button
+                        class="text-sm font-medium text-slate-400 hover:text-primary transition-colors flex items-center gap-1">
+                        Write a Review
+                        <span class="material-symbols-outlined text-base">edit</span>
+                    </button>
+                </div>
+                <div class="grid gap-6 md:grid-cols-2">
+                    <div class="p-7 rounded-2xl glass-panel relative group">
+                        <div
+                            class="absolute -top-3 -right-3 bg-surface-dark border border-white/10 rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity shadow-lg">
+                            <span class="material-symbols-outlined text-slate-400 text-sm">thumb_up</span>
+                        </div>
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="flex items-center gap-3">
+                                <div class="size-10 rounded-full bg-slate-700 bg-cover bg-center ring-2 ring-white/10"
+                                    data-alt="Reviewer profile picture"
+                                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDYUmTy1_UcRZ-5I0Y3a9a1cU1o07jgrfi5NUHvRcyjVO6NxC-i3bixltHXkY7cAFxtCsX_O5FZphmeSN2qd-4l1VsSfieQACQJK0HjKdgJynIRQllihWLG8Au5D-S63QUvIrYbDKUgEJTvoPfztPb-4pXZQ5z5JXxAfjeCfgNvc7-CYfpcpvWl6gtYDXXJRZHUpmKDZEI9FGD6bA6TFyYEIkVT3DvIz5h93zqstgrfeK1I2jl_2bh0DQxb6ejRLpKwW1DgChAyZg')">
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-slate-200">Sarah Jenkins</div>
+                                    <div class="text-xs text-slate-500 font-medium">Verified Reader</div>
+                                </div>
+                            </div>
+                            <div class="flex text-amber-400 text-sm gap-0.5">
+                                <span class="material-symbols-outlined fill-current text-[18px]">star</span>
+                                <span class="material-symbols-outlined fill-current text-[18px]">star</span>
+                                <span class="material-symbols-outlined fill-current text-[18px]">star</span>
+                                <span class="material-symbols-outlined fill-current text-[18px]">star</span>
+                                <span class="material-symbols-outlined fill-current text-[18px]">star</span>
+                            </div>
+                        </div>
+                        <p class="text-slate-300 leading-relaxed text-sm italic font-light">
+                            "Absolutely stunning. This book made me rethink so many perspectives on regret and
+                            opportunity. A must-read for anyone feeling stuck."
+                        </p>
+                        <div class="mt-4 text-xs text-slate-600">Posted 2 days ago</div>
+                    </div>
+                    <div class="p-7 rounded-2xl glass-panel relative group">
+                        <div
+                            class="absolute -top-3 -right-3 bg-surface-dark border border-white/10 rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity shadow-lg">
+                            <span class="material-symbols-outlined text-slate-400 text-sm">thumb_up</span>
+                        </div>
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="flex items-center gap-3">
+                                <div class="size-10 rounded-full bg-slate-700 bg-cover bg-center ring-2 ring-white/10"
+                                    data-alt="Reviewer profile picture"
+                                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC_r5XFZcdaHkmkgfC203j6nXkKolkM1b0rXRjdE-nNw2ZQbsIil_F6gmQ_r3hRpQp7B6rUTTY23-TrXWVC2uHSTShRI_3LkW0nAteWJ4xqbNWcDEN9eRSdgKHhPgxV7fqnyjzyOYwA--ZpA9gpnLCTy-pP7erJR7XE_iZmkjH72nv6nVIhLc4ME3ZDYNOA9Y_rkqXZI-PaUmV9Nhyhw4Em1wWfGlW2oJMRCNPNgcF6J8HHcifrzx8djCvFwU7OuSP5bx0h-AzThQ')">
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-slate-200">Marcus Chen</div>
+                                    <div class="text-xs text-slate-500 font-medium">Top Contributor</div>
+                                </div>
+                            </div>
+                            <div class="flex text-amber-400 text-sm gap-0.5">
+                                <span class="material-symbols-outlined fill-current text-[18px]">star</span>
+                                <span class="material-symbols-outlined fill-current text-[18px]">star</span>
+                                <span class="material-symbols-outlined fill-current text-[18px]">star</span>
+                                <span class="material-symbols-outlined fill-current text-[18px]">star</span>
+                                <span class="material-symbols-outlined text-[18px] text-slate-600">star</span>
+                            </div>
+                        </div>
+                        <p class="text-slate-300 leading-relaxed text-sm italic font-light">
+                            "Haig has a way with words that is both accessible and profound. While the middle sagged a
+                            bit, the ending was perfect."
+                        </p>
+                        <div class="mt-4 text-xs text-slate-600">Posted 1 week ago</div>
+                    </div>
+                </div>
+            </div>
+            <div class="space-y-8 pt-8 pb-12 border-t border-white/5">
+                <div class="flex items-center justify-between">
+                    <h3 class="text-2xl font-serif font-bold text-white">You Might Also Like</h3>
+                    <div class="flex gap-2">
+                        <button
+                            class="size-9 flex items-center justify-center rounded-full border border-white/10 hover:bg-white/5 hover:border-white/20 transition-colors text-slate-400 hover:text-white">
+                            <span class="material-symbols-outlined text-lg">arrow_back</span>
+                        </button>
+                        <button
+                            class="size-9 flex items-center justify-center rounded-full border border-white/10 hover:bg-white/5 hover:border-white/20 transition-colors text-slate-400 hover:text-white">
+                            <span class="material-symbols-outlined text-lg">arrow_forward</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+                    <div class="group cursor-pointer">
+                        <div
+                            class="aspect-[2/3] w-full rounded-lg overflow-hidden mb-4 relative bg-surface-darker shadow-lg ring-1 ring-white/5">
+                            <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105 opacity-90 group-hover:opacity-100"
+                                data-alt="Book cover for The Alchemist"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCJFPxvFkIjlSKaI4_H0dz1gd3QLHGa0t31lgc4pNvMd-qgSw-xnfjFwrrbNmbU5zfeCgbaOne7MsR-FR2u-qiovsczGUKQduveP2rH4Zu9rJSfYtoVPddXEw_H4nYPIndAwywH36skJe7R6BkYEKcITEEEq-wJ1eVwsJkbHVLAIeSYgD_ckAfwvmeVk0mLa08AiXOBsCQeFRZglN9qWrKtepisOjflFALkAXZetgW3X18SHzozsA3gpP9NgbSuEsDkCF0l3Ht5OA')">
+                            </div>
+                            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
+                            <div
+                                class="absolute top-2 right-2 bg-black/60 backdrop-blur-md p-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-all translate-y-2 group-hover:translate-y-0">
+                                <span class="material-symbols-outlined text-white text-sm">bookmark</span>
+                            </div>
+                        </div>
+                        <h4
+                            class="font-serif font-bold text-slate-200 line-clamp-1 group-hover:text-primary transition-colors text-lg">
+                            The Alchemist</h4>
+                        <p class="text-sm text-slate-500 mt-1">Paulo Coelho</p>
+                    </div>
+                    <div class="group cursor-pointer">
+                        <div
+                            class="aspect-[2/3] w-full rounded-lg overflow-hidden mb-4 relative bg-surface-darker shadow-lg ring-1 ring-white/5">
+                            <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105 opacity-90 group-hover:opacity-100"
+                                data-alt="Book cover for Eleanor Oliphant is Completely Fine"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCsiqWIzGtZM4rfSXiBdWchjDlwaXskp_umQS_A4kOhdmVuNNg2FPDm6HOEGqvSq8MzrHD1LyrYU5sj0uUTqn5N-3rQfpm2iqI78lpzkkEdtX7YWm6NCjAHeXEyEBuwya5tcHpwzauEbQeqBdRi2DwAVPINTo3_iaAsoViFe4obndy7Ui5C2OZi9M9AIWdQTurvEY-lBR1bSgXx3VM3_qS3VbUbQgNWa1OEkdY9ZIck40zngvP9RB9nwSZ2oUmxYGFqItF_Noqrog')">
+                            </div>
+                            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
+                            <div
+                                class="absolute top-2 right-2 bg-black/60 backdrop-blur-md p-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-all translate-y-2 group-hover:translate-y-0">
+                                <span class="material-symbols-outlined text-white text-sm">bookmark</span>
+                            </div>
+                        </div>
+                        <h4
+                            class="font-serif font-bold text-slate-200 line-clamp-1 group-hover:text-primary transition-colors text-lg">
+                            Eleanor Oliphant</h4>
+                        <p class="text-sm text-slate-500 mt-1">Gail Honeyman</p>
+                    </div>
+                    <div class="group cursor-pointer">
+                        <div
+                            class="aspect-[2/3] w-full rounded-lg overflow-hidden mb-4 relative bg-surface-darker shadow-lg ring-1 ring-white/5">
+                            <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105 opacity-90 group-hover:opacity-100"
+                                data-alt="Book cover for Anxious People"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCVTuOTOMI8ZC_mkcJnZIJ1hbZQks9kmaxCkKiLu_U7_4qIrmYPKKhwtAdBgs_yoAr7QUBYjjFqsViTNlyRUDqCWJpsPr7pfoNGD0gozvV5NyAFk4ESDThs7r4mZv-Az4EJE4m5YDi27kri4-1rkXMcRhkaQWrzjqat4h1-u34DkmTdlEw3qCAdhz5JcD4N0uTFIEYNddbyzEPkw4h3UOJbhoTktiO7MUgiFiSXrJFSgKuBUC9Cj-Xu-izHJe8e7r6pJ3w5GwoVyg')">
+                            </div>
+                            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
+                            <div
+                                class="absolute top-2 right-2 bg-black/60 backdrop-blur-md p-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-all translate-y-2 group-hover:translate-y-0">
+                                <span class="material-symbols-outlined text-white text-sm">bookmark</span>
+                            </div>
+                        </div>
+                        <h4
+                            class="font-serif font-bold text-slate-200 line-clamp-1 group-hover:text-primary transition-colors text-lg">
+                            Anxious People</h4>
+                        <p class="text-sm text-slate-500 mt-1">Fredrik Backman</p>
+                    </div>
+                    <div class="group cursor-pointer">
+                        <div
+                            class="aspect-[2/3] w-full rounded-lg overflow-hidden mb-4 relative bg-surface-darker shadow-lg ring-1 ring-white/5">
+                            <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105 opacity-90 group-hover:opacity-100"
+                                data-alt="Book cover for Where the Crawdads Sing"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCAeDGFeIPJM6TmATOutAHAatkvfZoQ7wiBGZrTjJoum_wa-NEivb-Pf8lev-J5Zep3LnnamFKeu6swnJ5gzvazxnwlKiCRa7d4VaUo1SqpJq_vN1kffnPMxHwj-JT-oKKILAp_ha_DX-TzRbb2By8pxGDLkAyaIz9qFIPrigS7rJKovgzElNM6lKVhI0zFD2LLyGtxLO8bl51V6WjO_JtonnLzGD_2UkFWxqa_pLTrInww3O3KYbH3nvEWAHeZds_ehaGt70I1hA')">
+                            </div>
+                            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
+                            <div
+                                class="absolute top-2 right-2 bg-black/60 backdrop-blur-md p-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-all translate-y-2 group-hover:translate-y-0">
+                                <span class="material-symbols-outlined text-white text-sm">bookmark</span>
+                            </div>
+                        </div>
+                        <h4
+                            class="font-serif font-bold text-slate-200 line-clamp-1 group-hover:text-primary transition-colors text-lg">
+                            Where the Crawdads...</h4>
+                        <p class="text-sm text-slate-500 mt-1">Delia Owens</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

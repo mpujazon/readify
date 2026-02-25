@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { HomePage } from './pages/home-page/home-page';
 import { BookList } from './pages/book-list/book-list';
 import { NotFound } from './pages/not-found/not-found';
+import { BookDetails } from './pages/book-details/book-details';
 
 export const routes: Routes = [
   {
@@ -13,7 +14,11 @@ export const routes: Routes = [
     component: BookList
   },
   {
-    path: "book/**",
+    path: "book/:id",
+    component: BookDetails
+  },
+  {
+    path:"404",
     component: NotFound
   },
   {

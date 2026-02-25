@@ -1,4 +1,5 @@
 import {Component, input} from '@angular/core';
+import {Book} from '../../../types/Book';
 
 @Component({
   selector: 'app-book-card',
@@ -6,7 +7,5 @@ import {Component, input} from '@angular/core';
   templateUrl: './book-card.html'
 })
 export class BookCard {
-  coverUrl = input<string>();
-  title = input.required<string>();
-  author = input.required<string>();
+  book = input.required<Book>();
 }

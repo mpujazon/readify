@@ -3,12 +3,12 @@
     <div
       class="absolute inset-0 bg-cover bg-center opacity-90 group-hover:opacity-100 transition-opacity duration-500"
       data-alt="Classic book cover art with elegant typography"
-      [style.background-image]="`url(${coverUrl()})`"
+      [style.background-image]="`url(${book().coverUrl})`"
     ></div>
     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
   </div>
   <div class="px-1">
-    <p class="text-text-main text-lg font-serif font-semibold leading-tight truncate group-hover:text-primary transition-colors">{{title()}}</p>
-    <p class="text-text-muted text-sm font-medium leading-normal truncate italic">{{author()}}</p>
+    <p class="text-text-main text-lg font-serif font-semibold leading-tight truncate group-hover:text-primary transition-colors">{{book().title}}</p>
+    <p class="text-text-muted text-sm font-medium leading-normal truncate italic">{{book().author}}</p>
   </div>
 </div>

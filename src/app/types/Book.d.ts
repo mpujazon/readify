@@ -1,4 +1,4 @@
-export interface BookCard{
+export interface Book{
   title: string;
   author: string;
   coverUrl?: string;

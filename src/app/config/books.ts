@@ -1,6 +1,6 @@
-import {BookCard} from '../types/BookCard';
+import {Book} from '../types/Book';
 
-export const books: BookCard[] = [
+export const books: Book[] = [
   {
     title: "The Great Gatsby",
     author: "F. Scott Fitzgerald",

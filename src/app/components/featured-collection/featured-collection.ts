@@ -1,13 +1,15 @@
 import {Component, inject} from '@angular/core';
 import {BooksService} from '../../services/books-service';
 import {BookCard} from '../atoms/book-card/book-card';
+import { RouterLink } from "@angular/router";
 
 
 @Component({
   selector: 'app-featured-collection',
   imports: [
-    BookCard
-  ],
+    BookCard,
+    RouterLink
+],
   templateUrl: './featured-collection.html'
 })
 export class FeaturedCollection {

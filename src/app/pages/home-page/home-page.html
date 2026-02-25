@@ -9,15 +9,17 @@
       </h2>
     </div>
     <div class="flex gap-4 mt-6 z-10">
-      <button class="flex items-center justify-center gap-2 rounded-lg h-12 px-8 bg-primary text-primary-content text-base font-bold hover:bg-primary-dark hover:scale-105 transition-all shadow-lg shadow-primary/20">
-        <span class="material-symbols-outlined text-[20px]">explore</span>
-        <span>Explore Books</span>
-      </button>
-      <button class="flex items-center justify-center gap-2 rounded-lg h-12 px-8 bg-surface-dark/50 backdrop-blur-md border border-surface-border text-text-main text-base font-bold hover:bg-surface-dark hover:border-primary/30 transition-all">
-        <span>Learn More</span>
-      </button>
+      <app-button
+        buttonStyle="primary"
+        label="Explore Books"
+        icon="explore"
+      />
+      <app-button
+        buttonStyle="secondary"
+        label="Learn More"
+      />
     </div>
-  </div>[
+  </div>
 </div>
 <section class="flex flex-col gap-8 mb-16">
   <div class="flex items-center justify-between px-2 border-l-4 border-primary pl-4">

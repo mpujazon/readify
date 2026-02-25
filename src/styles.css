@@ -22,3 +22,11 @@
 }
 
 @variant dark (&:where(.dark, .dark *));
+
+.primary-button{
+  @apply flex items-center justify-center gap-2 rounded-lg h-12 px-8 bg-primary text-primary-content text-base font-bold hover:bg-primary-dark hover:scale-105 transition-all shadow-lg shadow-primary/20 hover:cursor-pointer
+}
+
+.secondary-button{
+  @apply flex items-center justify-center gap-2 rounded-lg h-12 px-8 bg-surface-dark/50 backdrop-blur-md border border-surface-border text-text-main text-base font-bold hover:bg-surface-dark hover:border-primary/30 transition-all hover:cursor-pointer
+}

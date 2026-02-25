@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
+import {Button} from '../../components/atoms/button/button';
 
 @Component({
   selector: 'app-home-page',
-  imports: [],
+  imports: [
+    Button
+  ],
   templateUrl: './home-page.html',
-  styleUrl: './home-page.css',
 })
 export class HomePage {
 

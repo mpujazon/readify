@@ -1,0 +1,62 @@
+<header class="border-b border-solid border-surface-border mb-6">
+  <nav class="flex items-center justify-between whitespace-nowrap py-4 gap-4">
+    <div class="flex items-center gap-8">
+      <div class="flex items-center gap-3 text-text-main hover:text-primary transition-colors cursor-pointer group">
+        <span class="material-symbols-outlined text-3xl text-primary group-hover:text-primary-dark transition-colors">menu_book</span>
+        <h2 class="text-text-main text-xl font-bold font-serif leading-tight tracking-tight group-hover:text-white transition-colors">Book Haven</h2>
+      </div>
+      <nav class="hidden lg:flex items-center gap-8">
+        @for (link of links; track link.id) {
+          <a
+            class="text-text-muted text-sm font-medium leading-normal hover:text-text-main transition-colors hover:border-b-2 hover:border-surface-border"
+            [routerLink]="link.url"
+            routerLinkActive="text-text-main text-sm font-medium leading-normal hover:text-primary transition-colors border-b-2 border-primary"
+          >{{link.label}}</a>
+        }
+      </nav>
+    </div>
+    <div class="flex flex-1 justify-end gap-4 sm:gap-6 items-center">
+      <label class="hidden md:flex flex-col min-w-40 h-10! max-w-64 group relative">
+        <div class="flex w-full flex-1 items-stretch rounded-lg h-full border border-surface-border bg-surface-dark group-focus-within:border-primary/50 group-focus-within:ring-1 group-focus-within:ring-primary/50 transition-all">
+          <div class="text-text-muted flex items-center justify-center pl-3">
+            <span class="material-symbols-outlined text-[20px]">search</span>
+          </div>
+          <input class="flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg bg-transparent text-text-main focus:outline-0 border-none h-full placeholder:text-text-muted px-3 text-sm font-normal leading-normal" placeholder="Search books..." value=""/>
+        </div>
+      </label>
+      <button
+        class="lg:hidden text-text-main hover:text-primary transition-colors p-2"
+        (click)="toggleMenu()"
+        [attr.aria-label]="isMenuOpen ? 'Close menu' : 'Open menu'"
+        [attr.aria-expanded]="isMenuOpen"
+      >
+        <span class="material-symbols-outlined text-2xl">{{ isMenuOpen ? 'close' : 'menu' }}</span>
+      </button>
+    </div>
+  </nav>
+
+  @if (isMenuOpen) {
+    <nav class="lg:hidden border-t border-surface-border py-4 animate-fadeIn">
+      <div class="flex flex-col gap-4">
+        @for (link of links; track link.id) {
+          <a
+            class="text-text-muted text-base font-medium leading-normal hover:text-text-main transition-colors px-4 py-2 rounded hover:bg-surface-dark"
+            [routerLink]="link.url"
+            routerLinkActive="text-primary bg-surface-dark"
+            (click)="closeMenu()"
+          >{{link.label}}</a>
+        }
+        <div class="md:hidden px-4 py-2">
+          <label class="flex flex-col w-full group relative">
+            <div class="flex w-full flex-1 items-stretch rounded-lg h-10 border border-surface-border bg-surface-dark group-focus-within:border-primary/50 group-focus-within:ring-1 group-focus-within:ring-primary/50 transition-all">
+              <div class="text-text-muted flex items-center justify-center pl-3">
+                <span class="material-symbols-outlined text-[20px]">search</span>
+              </div>
+              <input class="flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg bg-transparent text-text-main focus:outline-0 border-none h-full placeholder:text-text-muted px-3 text-sm font-normal leading-normal" placeholder="Search books..." value=""/>
+            </div>
+          </label>
+        </div>
+      </div>
+    </nav>
+  }
+</header>

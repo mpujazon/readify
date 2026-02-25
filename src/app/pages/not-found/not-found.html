@@ -1,0 +1,42 @@
+<div class="flex flex-1 flex-col items-center justify-center px-4 py-12 md:py-20">
+            <div class="flex flex-col items-center gap-8 max-w-[600px] w-full animate-fade-in-up">
+                <!-- Hero Image / Illustration -->
+                <div
+                    class="relative w-full aspect-[16/9] max-w-[480px] rounded-xl overflow-hidden shadow-2xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
+                    <div class="bg-center bg-no-repeat bg-cover w-full h-full opacity-90"
+                        data-alt="Open book with pages fluttering in wind"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBAaD5HOE4GfpXh55-7ImjCNdljzzCGxOuDxZVj9I_edQvoOuwE9Zjyg7R8aKJ-9YuPHaTEPR6FlxaS55xUQmN7lU8ykUnv0cL6sTZTGrKwFP_z48F8uPVMscDGmry7ACce5VSif66EQVX_tb8wkIAfJhhdWoB_HpnFqQpUQXl9x3oh-oNiBMe6aue93d3NHUfwQNcpAP5csF_a9rUn9QdZsoilToaa96B8f1SOsWIm5W0Bb9Zaqbor-qkD1OPrbhX6c5b5CwuBtg");'>
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-background-light/80 to-transparent dark:from-background-dark/80">
+                    </div>
+                    <!-- Floating icon overlay -->
+                    <div
+                        class="absolute bottom-6 right-6 p-4 rounded-full bg-primary/20 backdrop-blur-sm border border-primary/30 text-primary">
+                        <span class="material-symbols-outlined text-4xl">menu_book</span>
+                    </div>
+                </div>
+                <!-- Text Content -->
+                <div class="flex flex-col items-center gap-4 text-center">
+                    <div class="space-y-2">
+                        <div class="text-primary font-bold tracking-wider text-sm uppercase">Error 404</div>
+                        <h1
+                            class="text-text-main text-3xl md:text-4xl font-extrabold leading-tight tracking-tight">
+                            Oops! This chapter is missing.
+                        </h1>
+                    </div>
+                    <p
+                        class="text-slate-500 dark:text-slate-400 text-base md:text-lg font-normal leading-relaxed max-w-[480px]">
+                        The page you are looking for seems to have flown away like loose pages in the wind. Let's get
+                        you back to your library safely.
+                    </p>
+                </div>
+
+                <app-button
+                    [buttonStyle]="'primary'"
+                    label="Back to home!"
+                    icon="arrow_back"
+                    link="home"
+                />
+            </div>
+        </div>

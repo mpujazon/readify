@@ -1,22 +1,15 @@
-import { Component, inject, input } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { ButtonStyle } from '../../../types/Button';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-button',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './button.html'
 })
 export class Button {
-  private router = inject(Router);
-
   label = input.required<string>();
   buttonStyle = input.required<ButtonStyle>();
   link = input<string>();
   icon = input<string>();
-
-
-  redirectTo() {
-    this.router.navigate([this.link()]);
-  }
 }

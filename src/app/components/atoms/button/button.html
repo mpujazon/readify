@@ -1,4 +1,4 @@
-<button (click)="redirectTo()" [class.primary-button]="buttonStyle()==='primary'"
+<button [routerLink]="link() ?? null" [class.primary-button]="buttonStyle()==='primary'"
   [class.secondary-button]="buttonStyle()==='secondary'">
   @if (icon()) {
   <span class="material-symbols-outlined text-[20px]">{{ icon() }}</span>

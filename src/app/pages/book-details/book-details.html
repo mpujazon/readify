@@ -4,7 +4,7 @@
             <div
                 class="relative group aspect-[2/3] w-full rounded-lg shadow-2xl shadow-black/50 overflow-hidden bg-surface-darker ring-1 ring-white/5">
                 <div class="w-full h-full bg-center bg-no-repeat bg-cover transform transition-transform duration-700 ease-out group-hover:scale-105"
-                    data-alt="The Midnight Library book cover art" 
+                    data-alt="The Midnight Library book cover art"
                     [style.background-image]="`url(${bookResource.value()?.coverUrl})`"> <!-- TODO: FIX data-alt attribute -->
                 </div>
                 <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60">
@@ -58,7 +58,7 @@
                     </div>
                     <div class="flex items-center gap-2 px-4 py-2 rounded-full bg-surface-dark border border-white/5">
                         <span class="material-symbols-outlined text-[18px] text-slate-500">category</span>
-                        <span>Fiction</span>
+                        <span>{{bookResource.value()?.category}}</span>
                     </div>
                 </div>
             </div>

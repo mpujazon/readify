@@ -1,9 +1,14 @@
 import { Component, inject, input, OnInit, resource, signal } from '@angular/core';
 import { BooksService } from '../../services/books-service';
+import {Button} from '../../components/atoms/button/button';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-book-details',
-  imports: [],
+  imports: [
+    Button,
+    RouterLink
+  ],
   templateUrl: './book-details.html'
 })
 export class BookDetails {

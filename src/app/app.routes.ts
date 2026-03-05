@@ -3,6 +3,7 @@ import { HomePage } from './pages/home-page/home-page';
 import { BookList } from './pages/book-list/book-list';
 import { NotFound } from './pages/not-found/not-found';
 import { BookDetails } from './pages/book-details/book-details';
+import { bookResolver } from './pages/book-details/book-details.resolver';
 
 export const routes: Routes = [
   {
@@ -15,7 +16,10 @@ export const routes: Routes = [
   },
   {
     path: "book/:id",
-    component: BookDetails
+    component: BookDetails,
+    resolve: {
+      book: bookResolver
+    }
   },
   {
     path:"404",

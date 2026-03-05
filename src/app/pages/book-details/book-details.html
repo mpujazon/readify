@@ -11,7 +11,7 @@
                 class="relative group aspect-[2/3] w-full rounded-lg shadow-2xl shadow-black/50 overflow-hidden bg-surface-darker ring-1 ring-white/5">
                 <div class="w-full h-full bg-center bg-no-repeat bg-cover transform transition-transform duration-700 ease-out group-hover:scale-105"
                     data-alt="The Midnight Library book cover art"
-                    [style.background-image]="`url(${bookResource.value()?.coverUrl})`"> <!-- TODO: FIX data-alt attribute -->
+                    [style.background-image]="`url(${book().coverUrl})`"> <!-- TODO: FIX data-alt attribute -->
                 </div>
                 <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60">
                 </div>
@@ -35,7 +35,7 @@
                 <div class="flex flex-wrap justify-between items-start gap-4 mb-3">
                     <h1
                         class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white leading-tight tracking-tight">
-                        {{bookResource.value()?.title}}
+                        {{book().title}}
                     </h1>
                     <div
                         class="flex items-center gap-1.5 bg-primary/10 px-3 py-1.5 rounded-full border border-primary/20">
@@ -47,7 +47,7 @@
                 </div>
                 <div class="flex items-center gap-2 mb-8 text-xl">
                     <span class="text-slate-500 font-serif italic">by</span>
-                    <a class="text-slate-200 hover:text-primary font-medium transition-colors" href="#">{{bookResource.value()?.author}}</a>
+                    <a class="text-slate-200 hover:text-primary font-medium transition-colors" href="#">{{book().author}}</a>
                 </div>
                 <div class="flex flex-wrap gap-3 text-sm text-slate-400">
                     <div class="flex items-center gap-2 px-4 py-2 rounded-full bg-surface-dark border border-white/5">
@@ -64,7 +64,7 @@
                     </div>
                     <div class="flex items-center gap-2 px-4 py-2 rounded-full bg-surface-dark border border-white/5">
                         <span class="material-symbols-outlined text-[18px] text-slate-500">category</span>
-                        <span>{{bookResource.value()?.category}}</span>
+                        <span>{{book().category}}</span>
                     </div>
                 </div>
             </div>

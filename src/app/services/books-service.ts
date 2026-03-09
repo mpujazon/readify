@@ -11,10 +11,10 @@ export class BooksService {
   }
   getBook(id: string){
     if(!id) throw new Error('Need to provide a book id.')
-    
+
     const book = books.find(book=> book.id === id);
     if(!book) throw new Error(`There is no books with  id ${id}`);
-    
+
     return book;
   }
 }

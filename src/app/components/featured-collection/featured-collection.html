@@ -8,7 +8,7 @@
     </a>
   </div>
   <div class="flex overflow-x-auto pb-8 pt-2 gap-6 [-ms-scrollbar-style:none] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden snap-x snap-mandatory px-2">
-    @for (book of books; track book.id) {
+    @for (book of (books$ | async); track book.id) {
       @if (book.featured) {
         <app-book-card [book]="book" />
       }

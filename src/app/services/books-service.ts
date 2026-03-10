@@ -1,4 +1,6 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import {Book} from '../types/Book';
 import {books} from '../data/books';
 
@@ -6,8 +8,11 @@ import {books} from '../data/books';
   providedIn: 'root',
 })
 export class BooksService {
-  getAllBooks(): Book[]{
-    return books;
+  private http = inject(HttpClient);
+  private apiUrl = 'http://localhost:3000/books';
+
+  getAllBooks(): Observable<Book[]>{
+    return this.http.get<Book[]>(this.apiUrl);
   }
   getBook(id: string){
     if(!id) throw new Error('Need to provide a book id.')
